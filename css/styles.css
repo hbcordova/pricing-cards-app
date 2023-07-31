@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #d0ff41;
+    --secondary-color: #121213;
+    --gray-100: #eaebea;
+    --gray-200: #dbd9d9;
+    --gray-300: #9a9b9b;
+    --gray-400: #3f4344;
+    --gray-500: #414246;
+    --font-primary: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, var(--gray-400) 0%, var(--gray-500) 100%);
+    font-family: var(--font-primary);
+    margin: 0;
+    position: relative;
+}
+
+body:after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 50px;
+    background-color: var(--secondary-color);
+    filter: blur(120px);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: 0;
+    right: 50px;
+    background-color: var(--primary-color);
+    filter: blur(120px);
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    padding: 20px 0;
+}
+
+@media (min-width: 900px) {
+    .pricing {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 100px;
+        column-gap: 30px;
+        row-gap: 0;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 35px;
+    min-width: 310px;
+    width: 95%;
+    background-color: var(--gray-100);
+    color: var(--secondary-color);
+    z-index: 200;
+}
+
+@media (min-width: 900px) {
+    .card {
+        width: auto;
+    }
+}
+
+.card-focus {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.card__chip {
+    border: 1px solid var(--gray-200);
+    border-radius: 15px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card__title {
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.card__facilities {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+@media (min-width: 500px) {
+    .card__facilities {
+        display: grid;
+        grid-template-rows: repeat(5, 40px);
+        grid-auto-flow: column;
+        column-gap: 50px;
+    }
+}
+
+.card__facilities--item {
+    display: flex;
+    align-items: center;
+}
+
+.card__facilities--item  i{
+    margin-right: 8px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.price__text {
+    color: var(--gray-300);
+}
+
+.price__text span {
+    font-weight: bold;
+    margin-right: 5px;
+    color: black;
+}
+
+.card.card-focus .price__text span {
+    color: white;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    width: 120px;
+    border-radius: 18px;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.btn .bx {
+    font-size: 24px;
+}
+
+.card.card-focus .card__facilities--item .bx {
+    color: var(--secondary-color);
+    background-color: white;
+    border-radius: 50%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #c5f555;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #27272c;
+}
